@@ -1,6 +1,6 @@
 document.getElementById("BishBosh").addEventListener("click", BishBosh);
-document.getElementById("btn").addEventListener("click", Rename);
-document.getElementById("createDivButton").addEventListener("click", CreateDivs);
+//document.getElementById("btn").addEventListener("click", Rename);
+//document.getElementById("createDivButton").addEventListener("click", CreateDivs);
 
 function Rename() {
     document.getElementById("text").innerHTML = "Bnarnar"
@@ -22,6 +22,28 @@ function CreateDivs() {
 }
 
 function BishBosh() {
+    
+    
+    var bish = document.getElementById('SetBish').value;
+    var bosh = document.getElementById('SetBosh').value;
+
+    for (let i = 1; i < 100; i++) {
+        if (i % bish == 0 && i % bosh == 0){
+            console.log('Bish-Bosh');
+        }
+        else if (i % bish == 0) {
+            console.log('Bish');
+        }
+        else if (i % bosh == 0) {
+            console.log('Bosh');
+        } 
+        else {
+            console.log(i);
+        }
+    }
+}
+/*
+function BishBosh() {
     //alert("Banana!");
     for (let i = 1; i < 100; i++) {
         if (i % 3 === 0 && i % 4 === 0){
@@ -38,3 +60,4 @@ function BishBosh() {
         }
     }
 }
+*/
