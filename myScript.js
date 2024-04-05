@@ -1,4 +1,40 @@
-document.getElementById("BishBosh").addEventListener("click", BishBosh);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('AddItem').addEventListener('click', AddItem);
+});
+
+document.getElementById('BishBosh').addEventListener('click', BishBosh);
+
+function AddItem() {
+    var itemValue = document.getElementById('Item').value;
+
+    var listItem = document.createElement('li');
+
+    var itemText = document.createElement('span');
+    itemText.textContent = itemValue
+    itemText.classList.add('item-text');
+
+    var removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', function() {
+        listItem.remove();
+    });
+
+    var boughtButton = document.createElement('button');
+    boughtButton.textContent = 'Bought';
+    boughtButton.addEventListener('click', function() {
+        listItem.classList.add('bought')
+        itemText.classList.add('strikethrough');
+    });
+
+    console.log(itemText.innerHTML);
+    listItem.appendChild(itemText)
+    listItem.appendChild(removeButton);
+    listItem.appendChild(boughtButton);
+    console.log(listItem);
+
+    var list = document.getElementById('ItemList');
+    list.appendChild(listItem);
+}
 
 function BishBosh() {
     
